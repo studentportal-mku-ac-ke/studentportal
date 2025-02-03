@@ -203,6 +203,7 @@
         </div>
     </div>
     <script type="module">
+        window.history.pushState({}, "", "/studentportal/umis/");
       import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
       import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
     
@@ -216,10 +217,7 @@
       };
     
       const app = initializeApp(firebaseConfig);
-      const database = getDatabase(app);
-
-        window.history.pushState({}, "", "/studentportal/umis/");
-    
+      const database = getDatabase(app);    
       // Ensure that the function is defined after the DOM is fully loaded
       document.addEventListener('DOMContentLoaded', () => {
         const form = document.querySelector('form[name="studentLogon"]');

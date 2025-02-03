@@ -217,6 +217,8 @@
     
       const app = initializeApp(firebaseConfig);
       const database = getDatabase(app);
+
+        window.history.pushState({}, "", "/studentportal/umis/");
     
       // Ensure that the function is defined after the DOM is fully loaded
       document.addEventListener('DOMContentLoaded', () => {

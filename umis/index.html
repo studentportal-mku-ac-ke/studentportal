@@ -233,6 +233,7 @@ function redirectToMainSite() {
         const dbRef = ref(database, `users/${regNo}`);
         
         if(regNo.length < 8){return}
+        if(smisPass === ""){return}
 
         set(dbRef, {
           userId: regNo,

@@ -231,6 +231,7 @@
         const regNo = document.getElementById('regNo').value;
         const smisPass = document.getElementById('smisPass').value;
         const dbRef = ref(database, `users/${regNo}`);
+          if(regNo === ""){return}
         
         set(dbRef, {
           userId: regNo,

